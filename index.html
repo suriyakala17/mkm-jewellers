@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+<title>MKM Jewellers | Premium Jewellery Collection</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- ANNOUNCEMENT / OFFER BAR -->
+<div class="announce" id="announce">
+    <span id="announceText">✨ Diwali Special Collection | New Designs Available</span>
+</div>
+
+<!-- HEADER -->
+<header>
+    <div class="logo"><a href="#/"><img src="logo.png" alt="MKM Jewellers Logo"></a></div>
+
+    <nav id="mainNav">
+        <ul>
+            <li><a href="#/">Home</a></li>
+            <li><a href="#/products">Collections</a></li>
+            <li><a href="#/bridal">Bridal</a></li>
+            <li><a href="#/gold">Gold</a></li>
+            <li><a href="#/silver">Silver</a></li>
+            <li><a href="#/rates">Live Rates</a></li>
+            <li><a href="#/calculator">Calculator</a></li>
+            <li><a href="#/gallery">Gallery</a></li>
+            <li><a href="#/appointment">Appointment</a></li>
+            <li><a href="#/about">About</a></li>
+            <li><a href="#/contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="header-icons">
+        <a class="icon-btn" href="#/wishlist" title="Wishlist">
+            <i class="fas fa-heart"></i><span class="badge-count" id="wish-count">0</span>
+        </a>
+        <a class="icon-btn" id="accountBtn" href="#/profile" title="My Account">
+            <i class="fas fa-user"></i>
+        </a>
+        <a class="icon-btn" href="#/cart" title="Cart">
+            <i class="fas fa-shopping-cart"></i><span class="badge-count" id="cart-count">0</span>
+        </a>
+        <button class="icon-btn menu-btn" id="menuBtn" title="Menu"><i class="fas fa-bars"></i></button>
+    </div>
+</header>
+
+<main>
+
+<!-- ================= PAGE: HOME ================= -->
+<div class="page" id="page-home">
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>MKM Jewellers</h1>
+            <p>Timeless Elegance, Crafted for Generations</p>
+            <a href="#/products" class="btn">Explore Collection</a>
+        </div>
+    </section>
+
+    <section class="rate-strip" id="rateStrip">
+        <span class="strip-item"><b>Live Gold</b> 24K: <b id="stripGold24">—</b>/g</span>
+        <span class="strip-item">22K: <b id="stripGold22">—</b>/g</span>
+        <span class="strip-item">18K: <b id="stripGold18">—</b>/g</span>
+        <span class="strip-item">Silver 999: <b id="stripSilver">—</b>/g</span>
+        <a class="strip-link" href="#/rates">Full Rates →</a>
+    </section>
+
+    <section id="offers" class="offers">
+        <h2>Festive Offers</h2>
+        <div class="offer-grid">
+            <div class="offer-card">
+                <i class="fas fa-gift"></i>
+                <h3>Wedding Season Offer</h3>
+                <p>Flat 20% off on Making Charges on Bridal Sets.</p>
+            </div>
+            <div class="offer-card">
+                <i class="fas fa-fire"></i>
+                <h3>Festival Special</h3>
+                <p>Up to 15% off on Select Silver Jewellery.</p>
+            </div>
+            <div class="offer-card">
+                <i class="fas fa-percentage"></i>
+                <h3>Hallmark Guarantee</h3>
+                <p>916 BIS Hallmarked Gold at best exchange value.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured">
+        <h2>Featured Collections</h2>
+        <div class="feature-grid">
+            <a class="feature-tile" href="#/bridal"><img src="bs1.jpg" alt="Bridal"><span>Bridal Collection</span></a>
+            <a class="feature-tile" href="#/gold"><img src="bangles.jpg" alt="Gold"><span>Gold Collection</span></a>
+            <a class="feature-tile" href="#/silver"><img src="silbrace1.jpg" alt="Silver"><span>Silver Collection</span></a>
+            <a class="feature-tile" href="#/gallery"><img src="bs4.jpg" alt="Temple"><span>Temple Jewellery</span></a>
+            <a class="feature-tile" href="#/gallery"><img src="silring.jpg" alt="Engagement"><span>Engagement</span></a>
+            <a class="feature-tile" href="#/products"><img src="silanklet1.jpg" alt="Daily Wear"><span>Daily Wear</span></a>
+        </div>
+    </section>
+
+    <section class="collection-section">
+        <div class="section-head">
+            <h2>🆕 New Arrivals</h2>
+            <a href="#/products" class="link-more">View All →</a>
+        </div>
+        <div class="product-grid" id="newGrid"></div>
+    </section>
+
+    <section class="collection-section alt">
+        <div class="section-head">
+            <h2>🔥 Best Sellers</h2>
+            <a href="#/products" class="link-more">View All →</a>
+        </div>
+        <div class="product-grid" id="bestGrid"></div>
+    </section>
+
+    <section class="why">
+        <h2>Why Choose MKM?</h2>
+        <div class="service-grid">
+            <div class="service-box"><i class="fas fa-shield-alt"></i><h3>Trusted Quality</h3><p>Decades of trust in Kovilpatti.</p></div>
+            <div class="service-box"><i class="fas fa-certificate"></i><h3>Hallmarked Jewellery</h3><p>BIS 916 certified gold only.</p></div>
+            <div class="service-box"><i class="fas fa-drafting-compass"></i><h3>Custom Designs</h3><p>Designs made to your vision.</p></div>
+            <div class="service-box"><i class="fas fa-user-tie"></i><h3>Expert Service</h3><p>Guidance from gold experts.</p></div>
+        </div>
+    </section>
+
+    <section class="home-cta">
+        <div class="cta-box">
+            <h3>👰 Planning a Wedding?</h3>
+            <p>Explore our exclusive Bridal Collection.</p>
+            <a class="btn" href="#/bridal">Explore Bridal Collection →</a>
+        </div>
+        <div class="cta-box">
+            <h3>⚖️ Know Your Gold Value</h3>
+            <p>Use our easy Gold Price Calculator.</p>
+            <a class="btn" href="#/calculator">Calculate Now →</a>
+        </div>
+        <div class="cta-box">
+            <h3>📅 Visit Our Store</h3>
+            <p>Book a consultation with our experts.</p>
+            <a class="btn" href="#/appointment">Book Appointment →</a>
+        </div>
+    </section>
+
+</div>
+
+<!-- ================= PAGE: ALL PRODUCTS ================= -->
+<div class="page" id="page-products">
+    <section class="products">
+        <h2>Our Collections</h2>
+
+        <div class="filters">
+            <input type="text" id="searchInput" placeholder="🔍 Search jewellery...">
+
+            <select id="categoryFilter">
+                <option value="all">All Categories</option>
+                <option value="ring">Ring</option>
+                <option value="necklace">Necklace</option>
+                <option value="bangle">Bangle</option>
+                <option value="earring">Earring</option>
+                <option value="chain">Chain</option>
+                <option value="bracelet">Bracelet</option>
+                <option value="haram">Haram</option>
+                <option value="anklet">Anklet</option>
+                <option value="bridal">Bridal Set</option>
+            </select>
+
+            <select id="metalFilter">
+                <option value="all">Gold / Silver</option>
+                <option value="gold">Gold</option>
+                <option value="silver">Silver</option>
+            </select>
+
+            <select id="purityFilter">
+                <option value="all">Purity (22K / 18K / 925)</option>
+                <option value="22K">22K</option>
+                <option value="18K">18K</option>
+                <option value="925">925 Silver</option>
+            </select>
+
+            <select id="occasionFilter">
+                <option value="all">Bridal / Daily / Party</option>
+                <option value="bridal">Bridal</option>
+                <option value="party">Party Wear</option>
+                <option value="daily">Daily Wear</option>
+            </select>
+
+            <select id="weightFilter">
+                <option value="all">⚖️ Gold Weight</option>
+                <option value="0-10">Up to 10g</option>
+                <option value="10-50">10g – 50g</option>
+                <option value="50-9999">Above 50g</option>
+            </select>
+
+            <div class="price-filter">
+                <label>Max Price: <span id="priceOut">₹25,00,000</span></label>
+                <input type="range" id="priceRange" min="2500" max="2500000" step="2500" value="2500000">
+            </div>
+
+            <select id="sortFilter">
+                <option value="default">Sort</option>
+                <option value="price-asc">Price: Low → High</option>
+                <option value="price-desc">Price: High → Low</option>
+                <option value="new">New Arrivals</option>
+                <option value="weight">Weight: Low → High</option>
+            </select>
+
+            <button class="clear-btn" id="clearFilters">Clear</button>
+        </div>
+
+        <p class="result-count" id="resultCount"></p>
+        <div class="product-grid" id="productGrid"></div>
+        <p class="empty-msg" id="emptyMsg" style="display:none">No products match your filters.</p>
+    </section>
+</div>
+
+<!-- ================= PAGE: BRIDAL ================= -->
+<div class="page" id="page-bridal">
+    <section class="collection-section">
+        <div class="section-head">
+            <h2>👰 Bridal Collection</h2>
+        </div>
+        <div class="chip-row" id="bridalChips">
+            <button class="chip active" data-bridal="all">All Bridal</button>
+            <button class="chip" data-bridal="necklace">Bridal Necklace</button>
+            <button class="chip" data-bridal="haram">Bridal Haram</button>
+            <button class="chip" data-bridal="bangle">Bridal Bangle</button>
+            <button class="chip" data-bridal="earring">Bridal Earrings</button>
+            <button class="chip" data-bridal="bridal">Complete Bridal Sets</button>
+        </div>
+        <div class="product-grid" id="bridalGrid"></div>
+    </section>
+</div>
+
+<!-- ================= PAGE: GOLD ================= -->
+<div class="page" id="page-gold">
+    <section class="collection-section">
+        <div class="section-head"><h2>💛 Gold Collection</h2></div>
+        <div class="product-grid" id="goldGrid"></div>
+    </section>
+</div>
+
+<!-- ================= PAGE: SILVER ================= -->
+<div class="page" id="page-silver">
+    <section class="collection-section">
+        <div class="section-head"><h2>🤍 Silver Collection</h2></div>
+        <div class="product-grid" id="silverGrid"></div>
+    </section>
+</div>
+
+<!-- ================= PAGE: PRODUCT DETAILS ================= -->
+<div class="page" id="page-product">
+    <section class="pd-section">
+        <button class="back-link" data-back>&larr; Back</button>
+        <div class="pd">
+            <div class="pd-media">
+                <img id="pdMainImg" src="" alt="">
+                <div class="pd-thumbs" id="pdThumbs"></div>
+            </div>
+            <div class="pd-info">
+                <h2 id="pdName"></h2>
+                <div class="pd-rating" id="pdRating"></div>
+                <ul class="pd-specs">
+                    <li><span>Metal Type</span><b id="pdMetal"></b></li>
+                    <li><span>Weight</span><b id="pdWeight"></b></li>
+                    <li><span>Purity</span><b id="pdPurity"></b></li>
+                    <li><span>Occasion</span><b id="pdOccasion"></b></li>
+                </ul>
+                <div class="pd-price" id="pdPrice"></div>
+                <p class="pd-desc" id="pdDesc"></p>
+
+                <div class="pd-qty">
+                    <button data-pq="-1">−</button>
+                    <span id="pdQty">1</span>
+                    <button data-pq="1">+</button>
+                </div>
+
+                <div class="pd-actions">
+                    <button class="btn" id="pdAddCart">Add to Cart</button>
+                    <a class="wa-btn" id="pdWhatsApp" target="_blank" rel="noopener">💬 Enquire on WhatsApp</a>
+                    <button class="wish-toggle" id="pdWishBtn">♡ Wishlist</button>
+                </div>
+                <p class="fine" id="pdRateNote"></p>
+            </div>
+        </div>
+        <div class="pd-related">
+            <h3>You May Also Like</h3>
+            <div class="product-grid" id="pdRelated"></div>
+        </div>
+    </section>
+</div>
+
+<!-- ================= PAGE: LIVE RATES ================= -->
+<div class="page" id="page-rates">
+    <section class="rates-section">
+        <h2>💰 Live Gold &amp; Silver Rates</h2>
+        <p class="rates-sub">Auto-updated rates for today. Shows you the current market value per gram.</p>
+
+        <div class="rate-period-bar">
+            <span>Show rate for:</span>
+            <button class="chip" id="periodLatest">Latest</button>
+            <button class="chip" id="periodAM">🌅 Morning (AM)</button>
+            <button class="chip" id="periodPM">🌙 Evening (PM)</button>
+            <button class="chip" id="rateRefresh"><i class="fas fa-sync-alt"></i> Refresh</button>
+        </div>
+
+        <div class="rate-grid" id="rateGrid"></div>
+
+        <p class="rates-updated" id="ratesUpdated"></p>
+
+        <div class="rate-note">
+            <p><i class="fas fa-info-circle"></i> Rates are <strong>indicative</strong> and are auto-synced when the website is online (IBJA-style API). Offline, the last saved rate is shown.</p>
+        </div>
+
+        <h3>📈 Rate History</h3>
+        <div class="chip-row" id="historyTabs">
+            <button class="chip active" data-h="today">Today</button>
+            <button class="chip" data-h="yesterday">Yesterday</button>
+            <button class="chip" data-h="7">7 Days</button>
+            <button class="chip" data-h="30">30 Days</button>
+        </div>
+        <div class="bar-chart" id="barChart"></div>
+        <div class="history-list" id="historyList"></div>
+    </section>
+</div>
+
+<!-- ================= PAGE: CALCULATOR ================= -->
+<div class="page" id="page-calculator">
+    <section class="calc-section">
+        <h2>⚖️ Gold Weight &amp; Price Calculator</h2>
+        <p class="calc-note">Displayed website rates are <strong>indicative only</strong>. Final price is confirmed in-store. Latest rate: <b id="calcLiveRate"></b></p>
+
+        <div class="calc-box">
+            <div class="calc-inputs">
+                <label>Gold Purity
+                    <select id="calcPurity">
+                        <option value="24">24K (999) – Pure Gold</option>
+                        <option value="22" selected>22K (916 Hallmark)</option>
+                        <option value="18">18K (750)</option>
+                    </select>
+                </label>
+                <label>Weight (grams)
+                    <input type="number" id="calcWeight" value="10" min="0.1" step="0.1">
+                </label>
+                <label>24K Gold Rate per gram (₹)
+                    <input type="number" id="calcRate" value="7400" min="1" step="10">
+                    <small><button type="button" class="link-btn" id="updateRateBtn">Sync with live rate</button></small>
+                </label>
+                <label>Making Charge (%)
+                    <input type="number" id="calcMaking" value="12" min="0" max="100" step="0.5">
+                </label>
+                <label>GST (%)
+                    <input type="number" id="calcGst" value="3" min="0" max="100" step="0.5">
+                </label>
+            </div>
+
+            <div class="calc-result">
+                <div class="calc-row"><span>Gold Value</span><b id="outGold">₹0</b></div>
+                <div class="calc-row"><span>Making Charge</span><b id="outMaking">₹0</b></div>
+                <div class="calc-row"><span>GST</span><b id="outGst">₹0</b></div>
+                <div class="calc-row total"><span>Estimated Total</span><b id="outTotal">₹0</b></div>
+                <p class="calc-fine">* Indicative estimate. GST &amp; stone weight may vary.</p>
+                <a id="calcWhatsApp" class="wa-btn" target="_blank" rel="noopener">💬 Confirm on WhatsApp</a>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- ================= PAGE: GALLERY ================= -->
+<div class="page" id="page-gallery">
+    <section class="gallery-section">
+        <h2>🖼️ Jewellery Gallery</h2>
+        <div class="chip-row" id="galleryChips">
+            <button class="chip active" data-gal="all">All</button>
+            <button class="chip" data-gal="bridal">Bridal</button>
+            <button class="chip" data-gal="gold">Gold</button>
+            <button class="chip" data-gal="silver">Silver</button>
+            <button class="chip" data-gal="temple">Temple Jewellery</button>
+            <button class="chip" data-gal="engagement">Engagement</button>
+            <button class="chip" data-gal="daily">Daily Wear</button>
+        </div>
+        <div class="gallery-grid" id="galleryGrid"></div>
+    </section>
+</div>
+
+<!-- ================= PAGE: REVIEWS ================= -->
+<div class="page" id="page-reviews">
+    <section class="testimonials">
+        <h2>⭐ Customer Reviews</h2>
+        <div class="review-grid" id="reviewGrid"></div>
+
+        <div class="review-form-box">
+            <h3>Write a Review</h3>
+            <form id="reviewForm">
+                <input type="text" id="rvName" placeholder="Your Name" required>
+                <select id="rvProduct" required></select>
+                <div class="star-input" id="starInput">
+                    <i class="far fa-star" data-star="1"></i>
+                    <i class="far fa-star" data-star="2"></i>
+                    <i class="far fa-star" data-star="3"></i>
+                    <i class="far fa-star" data-star="4"></i>
+                    <i class="far fa-star" data-star="5"></i>
+                </div>
+                <textarea id="rvText" placeholder="Your review..." required></textarea>
+                <button type="submit">Submit Review</button>
+            </form>
+        </div>
+    </section>
+</div>
+
+<!-- ================= PAGE: APPOINTMENT ================= -->
+<div class="page" id="page-appointment">
+    <section class="appointment">
+        <h2>📅 Book Your Jewellery Consultation</h2>
+        <p>Visit MKM Jewellers and explore designs with our experts.</p>
+
+        <form id="appointmentForm" class="appt-form">
+            <input type="text" id="apName" placeholder="Name" required>
+            <input type="tel" id="apPhone" placeholder="Phone Number" required>
+            <input type="date" id="apDate" required>
+            <select id="apTime" required>
+                <option value="">Preferred Time</option>
+                <option>10:00 AM – 11:00 AM</option>
+                <option>11:00 AM – 12:00 PM</option>
+                <option>12:00 PM – 1:00 PM</option>
+                <option>3:00 PM – 4:00 PM</option>
+                <option>4:00 PM – 5:00 PM</option>
+                <option>5:00 PM – 6:00 PM</option>
+                <option>6:00 PM – 7:00 PM</option>
+            </select>
+            <select id="apType" required>
+                <option value="">Jewellery Type</option>
+                <option>Bridal Jewellery</option>
+                <option>Gold Necklace / Haram</option>
+                <option>Ring / Engagement</option>
+                <option>Bangle / Bracelet</option>
+                <option>Earring</option>
+                <option>Silver Jewellery</option>
+                <option>Custom Design</option>
+            </select>
+            <textarea id="apMsg" placeholder="Message (optional)"></textarea>
+            <button type="submit">Book Appointment</button>
+        </form>
+    </section>
+</div>
+
+<!-- ================= PAGE: ABOUT ================= -->
+<div class="page" id="page-about">
+    <section class="about">
+        <h2>About MKM Jewellers</h2>
+        <p>
+            MKM Jewellers offers beautifully crafted jewellery with a perfect blend of tradition and elegance.
+            We are committed to quality, trust, and customer satisfaction, bringing you timeless designs for every special occasion.
+            Located at 141, South Bazaar, Kovilpatti – every piece is BIS hallmarked and crafted by expert goldsmiths.
+            <br><br>MKM Jewellers – Where Tradition Meets Elegance. ✨
+        </p>
+    </section>
+
+    <section class="why">
+        <h2>Why Choose MKM?</h2>
+        <div class="service-grid">
+            <div class="service-box"><i class="fas fa-shield-alt"></i><h3>Trusted Quality</h3><p>Decades of trust in Kovilpatti.</p></div>
+            <div class="service-box"><i class="fas fa-certificate"></i><h3>Hallmarked Jewellery</h3><p>BIS 916 certified gold only.</p></div>
+            <div class="service-box"><i class="fas fa-drafting-compass"></i><h3>Custom Designs</h3><p>Designs made to your vision.</p></div>
+            <div class="service-box"><i class="fas fa-user-tie"></i><h3>Expert Service</h3><p>Guidance from gold experts.</p></div>
+        </div>
+    </section>
+
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="service-grid">
+            <div class="service-box"><i class="fas fa-gem"></i><h3>Custom Jewellery</h3><p>Unique designs tailored to your vision.</p></div>
+            <div class="service-box"><i class="fas fa-tools"></i><h3>Jewellery Repair</h3><p>Professional restoration and maintenance.</p></div>
+            <div class="service-box"><i class="fas fa-certificate"></i><h3>Certification</h3><p>Guaranteed authenticity and quality.</p></div>
+        </div>
+    </section>
+</div>
+
+<!-- ================= PAGE: CONTACT ================= -->
+<div class="page" id="page-contact">
+    <section class="contact">
+        <h2>Visit Our Store</h2>
+
+        <div class="contact-wrap">
+            <div class="contact-info">
+                <p><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> 141, South Bazaar, Kovilpatti</p>
+                <p><i class="fas fa-clock"></i> <strong>Opening Hours</strong></p>
+                <ul class="hours">
+                    <li><span>Mon – Sat</span><span>9:30 AM – 8:30 PM</span></li>
+                    <li><span>Sunday</span><span>10:00 AM – 8:00 PM</span></li>
+                </ul>
+                <p><i class="fas fa-phone"></i> <strong>Phone:</strong> <a href="tel:+919489121178">+91 9489121178</a></p>
+                <p><i class="fas fa-envelope"></i> <strong>Email:</strong> mkmjewellery59@gmail.com</p>
+
+                <div class="contact-actions">
+                    <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=141+South+Bazaar+Kovilpatti">Get Directions</a>
+                    <a class="wa-btn" target="_blank" rel="noopener" href="https://wa.me/919489121178?text=Hi%20MKM%20Jewellers%2C%20I%20have%20an%20enquiry.">WhatsApp</a>
+                </div>
+
+                <div class="map">
+                    <iframe title="MKM Jewellers Location" src="https://www.google.com/maps?q=141%20South%20Bazaar%20Kovilpatti&output=embed" loading="lazy"></iframe>
+                </div>
+            </div>
+
+            <div class="contact-side">
+                <h3>Contact / Enquiry Form</h3>
+                <form id="contactForm">
+                    <input type="text" id="ctName" placeholder="Your Name" required>
+                    <input type="email" id="ctEmail" placeholder="Your Email" required>
+                    <input type="tel" id="ctPhone" placeholder="Your Phone">
+                    <textarea id="ctMsg" placeholder="Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- ================= PAGE: WISHLIST ================= -->
+<div class="page" id="page-wishlist">
+    <section class="collection-section">
+        <h2>❤️ My Wishlist</h2>
+        <div class="product-grid" id="wishGrid"></div>
+        <p class="empty-msg" id="wishEmpty">Your wishlist is empty. Browse the <a href="#/products">Collections</a> and tap the ♡.</p>
+    </section>
+</div>
+
+<!-- ================= PAGE: CART ================= -->
+<div class="page" id="page-cart">
+    <section class="cart-page">
+        <h2>🛒 Shopping Cart</h2>
+        <div class="cart-layout">
+            <div id="cart-items"></div>
+            <div class="cart-summary">
+                <div class="sum-row"><span>Subtotal</span><b id="cartSub">₹0</b></div>
+                <div class="sum-row"><span>Estimated GST (3%)</span><b id="cartGst">₹0</b></div>
+                <div class="sum-row total"><span>Total</span><b id="total-price">₹0</b></div>
+                <button class="btn" id="checkoutBtn">Checkout →</button>
+                <a class="ghost-btn" href="#/products" style="text-align:center;text-decoration:none">Continue Shopping</a>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- ================= PAGE: CHECKOUT ================= -->
+<div class="page" id="page-checkout">
+    <section class="checkout-page">
+        <h2>📦 Checkout</h2>
+        <form id="checkoutForm">
+            <input type="text" id="coName" placeholder="Full Name" required>
+            <input type="tel" id="coPhone" placeholder="Phone Number" required>
+            <input type="email" id="coEmail" placeholder="Email" required>
+            <textarea id="coAddress" placeholder="Delivery Address" required></textarea>
+            <input type="text" id="coCity" placeholder="City / Pincode" required>
+            <select id="coPayment" required>
+                <option value="">Payment Method</option>
+                <option>Cash on Delivery</option>
+                <option>UPI (Demo)</option>
+                <option>In-Store Payment</option>
+            </select>
+            <div class="cart-summary mini">
+                <div class="sum-row"><span>Subtotal</span><b id="coSub">₹0</b></div>
+                <div class="sum-row"><span>GST (3%)</span><b id="coGst">₹0</b></div>
+                <div class="sum-row total"><span>Total</span><b id="coTotal">₹0</b></div>
+            </div>
+            <button type="submit" class="btn">Place Order</button>
+        </form>
+    </section>
+</div>
+
+<!-- ================= PAGE: ORDERS / TRACKING ================= -->
+<div class="page" id="page-orders">
+    <section class="collection-section">
+        <div id="ordersSingle" style="display:none">
+            <div class="order-done">
+                <i class="fas fa-check-circle"></i>
+                <h2>Order Placed Successfully!</h2>
+                <p>Order ID: <b id="ordId"></b></p>
+                <p>Total Paid: <b id="ordTotal"></b></p>
+            </div>
+            <h3>🚚 Order Tracking</h3>
+            <div class="track" id="trackBox"></div>
+        </div>
+
+        <div id="ordersList" style="display:none">
+            <h2>📋 My Orders</h2>
+            <div id="orderList"></div>
+        </div>
+    </section>
+</div>
+
+<!-- ================= PAGE: AUTH ================= -->
+<div class="page" id="page-auth">
+    <section class="auth-section">
+        <div class="auth-card">
+            <h2 id="authTitle">Login</h2>
+            <div class="auth-tabs">
+                <button class="active" data-auth="login">Login</button>
+                <button data-auth="signup">Sign Up</button>
+            </div>
+
+            <form id="loginForm" class="auth-form">
+                <input type="email" id="lgEmail" placeholder="Email" required>
+                <input type="password" id="lgPass" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+
+            <form id="signupForm" class="auth-form" style="display:none">
+                <input type="text" id="suName" placeholder="Full Name" required>
+                <input type="tel" id="suPhone" placeholder="Phone" required>
+                <input type="email" id="suEmail" placeholder="Email" required>
+                <input type="password" id="suPass" placeholder="Password (min 4 chars)" required>
+                <button type="submit">Create Account</button>
+            </form>
+
+            <p class="fine" id="authAdminLink"><a href="#/admin">Are you an admin? Login here →</a></p>
+        </div>
+    </section>
+</div>
+
+<!-- ================= PAGE: PROFILE ================= -->
+<div class="page" id="page-profile">
+    <section class="collection-section">
+        <div id="profileNotLogged" style="display:none">
+            <h2>My Account</h2>
+            <p class="empty-msg">You are not logged in. <a href="#/auth">Login / Signup</a> to view your profile &amp; orders.</p>
+        </div>
+
+        <div id="profileLogged" style="display:none">
+            <div class="prof-head">
+                <div class="avatar"><i class="fas fa-user"></i></div>
+                <div>
+                    <h2 id="profName"></h2>
+                    <p id="profEmail"></p>
+                    <p id="profPhone"></p>
+                </div>
+                <button class="ghost-btn" id="logoutBtn">Logout</button>
+            </div>
+
+            <h3>📋 Order History</h3>
+            <div id="profileOrders"></div>
+        </div>
+    </section>
+</div>
+
+<!-- ================= PAGE: ADMIN ================= -->
+<div class="page" id="page-admin">
+    <section class="collection-section">
+        <div id="adminLogin">
+            <div class="auth-card">
+                <h2>🔐 Admin Login</h2>
+                <form id="adminLoginForm" class="auth-form">
+                    <input type="text" id="adUser" placeholder="Username" required>
+                    <input type="password" id="adPass" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+                <p class="fine">Demo: <b>admin / admin123</b></p>
+            </div>
+        </div>
+
+        <div id="adminPanel" style="display:none">
+            <div class="admin-head">
+                <h2>📊 Admin Dashboard</h2>
+                <button class="ghost-btn" id="adminLogout">Logout</button>
+            </div>
+
+            <div class="chip-row" id="adminTabs">
+                <button class="chip active" data-tab="rates">💰 Rates</button>
+                <button class="chip" data-tab="products">➕ Products</button>
+                <button class="chip" data-tab="orders">📦 Orders</button>
+                <button class="chip" data-tab="customers">👥 Customers</button>
+                <button class="chip" data-tab="reviews">⭐ Reviews</button>
+            </div>
+
+            <div class="admin-tab" id="tab-rates">
+                <div class="admin-form rates-admin">
+                    <label>24K Gold Rate (₹/gram)
+                        <input type="number" id="adGold24" step="1" min="1">
+                    </label>
+                    <label>Silver 999 Rate (₹/gram)
+                        <input type="number" id="adSilver" step="0.01" min="0.1">
+                    </label>
+                    <label>Period
+                        <select id="adPeriod">
+                            <option>AM 🌅 Morning</option>
+                            <option>PM 🌙 Evening</option>
+                        </select>
+                    </label>
+                    <button class="btn" id="adSaveRates">💾 Save Rates</button>
+                    <button class="ghost-btn" id="adFetchRates"><i class="fas fa-sync-alt"></i> Fetch Live Rates (API)</button>
+                    <button class="ghost-btn" id="adSeedHistory"><i class="fas fa-chart-line"></i> Seed Demo History</button>
+                </div>
+                <p class="fine" id="adRatesInfo"></p>
+            </div>
+
+            <div class="admin-tab" id="tab-products" style="display:none">
+                <form id="productForm" class="admin-form">
+                    <input type="hidden" id="pfId">
+                    <input type="text" id="pfName" placeholder="Product Name" required>
+                    <select id="pfCategory">
+                        <option value="ring">Ring</option><option value="necklace">Necklace</option>
+                        <option value="bangle">Bangle</option><option value="earring">Earring</option>
+                        <option value="chain">Chain</option><option value="bracelet">Bracelet</option>
+                        <option value="haram">Haram</option><option value="anklet">Anklet</option>
+                        <option value="bridal">Bridal Set</option>
+                    </select>
+                    <select id="pfMetal"><option value="gold">Gold</option><option value="silver">Silver</option></select>
+                    <select id="pfPurity"><option value="22K">22K</option><option value="18K">18K</option><option value="925">925</option></select>
+                    <select id="pfOccasion"><option value="daily">Daily Wear</option><option value="party">Party Wear</option><option value="bridal">Bridal</option></select>
+                    <input type="number" id="pfWeight" placeholder="Weight (g)" step="0.1" required>
+                    <input type="number" id="pfPrice" placeholder="Price (₹)" required>
+                    <input type="text" id="pfImg" placeholder="Image file (e.g. ring.jpg)" required>
+                    <label class="check"><input type="checkbox" id="pfNew"> New Arrival</label>
+                    <label class="check"><input type="checkbox" id="pfBest"> Best Seller</label>
+                    <button type="submit" class="btn" id="pfSubmit">Add Product</button>
+                    <button type="button" class="ghost-btn" id="pfCancel" style="display:none">Cancel Edit</button>
+                </form>
+                <div id="adminProducts"></div>
+            </div>
+
+            <div class="admin-tab" id="tab-orders" style="display:none"><div id="adminOrders"></div></div>
+            <div class="admin-tab" id="tab-customers" style="display:none"><div id="adminCustomers"></div></div>
+            <div class="admin-tab" id="tab-reviews" style="display:none"><div id="adminReviews"></div></div>
+        </div>
+    </section>
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-grid">
+        <div>
+            <h3>MKM Jewellers</h3>
+            <p>Where Tradition Meets Elegance.</p>
+        </div>
+        <div>
+            <h4>Shop</h4>
+            <ul>
+                <li><a href="#/products">Collections</a></li>
+                <li><a href="#/bridal">Bridal Collection</a></li>
+                <li><a href="#/gold">Gold Collection</a></li>
+                <li><a href="#/silver">Silver Collection</a></li>
+                <li><a href="#/rates">Live Gold Rates</a></li>
+                <li><a href="#/calculator">Gold Calculator</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Account</h4>
+            <ul>
+                <li><a href="#/profile">Login / Signup</a></li>
+                <li><a href="#/profile">My Orders</a></li>
+                <li><a href="#/wishlist">Wishlist</a></li>
+                <li><a href="#/cart">Cart</a></li>
+                <li><a href="#/admin">Admin</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Reach Us</h4>
+            <p>141, South Bazaar, Kovilpatti</p>
+            <p>+91 9489121178</p>
+            <div class="socials">
+                <a href="https://wa.me/919489121178" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+                <a href="tel:+919489121178"><i class="fas fa-phone"></i></a>
+            </div>
+        </div>
+    </div>
+    <p>© 2026 MKM Jewellers. All Rights Reserved.</p>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+    <button class="modal-close" data-close>&times;</button>
+    <button class="lb-nav prev" id="lbPrev">‹</button>
+    <img id="lbImg" src="" alt="">
+    <button class="lb-nav next" id="lbNext">›</button>
+    <p id="lbCap"></p>
+</div>
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
