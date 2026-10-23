@@ -1,6 +1,6 @@
 /* ================= MKM JEWELLERS ================= */
 
-const WA_NUMBER = "919489121178";
+const WA_NUMBER = "918667314426";
 const GST_RATE = 3;
 
 /* ---------- helpers ---------- */
@@ -38,6 +38,30 @@ function toast(msg) {
 }
 function waLink(text) {
     return "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(text);
+}
+function ownerOrderMsg(o) {
+    const c = o.customer || {};
+    const lines = [];
+    lines.push("NEW ORDER - MKM Jewellers");
+    lines.push("Order ID: " + o.id);
+    lines.push("Date: " + o.date);
+    lines.push("");
+    lines.push("Customer: " + (c.name || "-"));
+    lines.push("Phone: " + (c.phone || "-"));
+    if (c.email) lines.push("Email: " + c.email);
+    const addr = [c.address, c.city].filter(Boolean).join(", ");
+    if (addr) lines.push("Address: " + addr);
+    lines.push("Payment: " + (o.payment || "-"));
+    lines.push("");
+    lines.push("Items:");
+    o.items.forEach((it, i) => {
+        lines.push((i + 1) + ". " + it.name + " x" + it.qty + " = " + money(it.price * it.qty));
+    });
+    lines.push("");
+    lines.push("Subtotal: " + money(o.sub));
+    lines.push("GST: " + money(o.gst));
+    lines.push("TOTAL: " + money(o.total));
+    return lines.join("\n");
 }
 function starsHTML(n) {
     n = Number(n) || 0;
@@ -232,6 +256,16 @@ function saveUsers() { store("mkm_users", users); }
 function saveOrders() { store("mkm_orders", orders); }
 function saveReviews() { store("mkm_reviews", reviews); }
 function saveRates() { store("mkm_rates", rates); }
+
+function nextUserNo() {
+    return users.reduce((m, u) => Math.max(m, Number(u.no) || 0), 0) + 1;
+}
+function ensureUserNumbers() {
+    let max = users.reduce((m, u) => Math.max(m, Number(u.no) || 0), 0);
+    let changed = false;
+    users.forEach(u => { if (!u.no) { u.no = ++max; changed = true; } });
+    if (changed) saveUsers();
+}
 
 function getProduct(id) { return products.find(p => p.id === id); }
 function currentUser() { return users.find(u => u.email === session) || null; }
@@ -665,7 +699,8 @@ $("#checkoutForm").addEventListener("submit", e => {
     saveCart();
     updateCounts();
     e.target.reset();
-    toast("Order placed successfully! ID: " + order.id);
+    toast("Order placed! Sending it to the shop on WhatsApp...");
+    window.open(waLink(ownerOrderMsg(order)), "_blank");
     location.hash = "#/orders/" + order.id;
 });
 
@@ -694,6 +729,7 @@ function renderOrders(params) {
         if (o) {
             $("#ordId").innerText = o.id;
             $("#ordTotal").innerText = money(o.total);
+            $("#ordWhatsApp").href = waLink(ownerOrderMsg(o));
             $("#trackBox").innerHTML = trackHTML(o.status);
             $("#ordersSingle").style.display = "block";
             return;
@@ -1083,6 +1119,7 @@ $("#signupForm").addEventListener("submit", e => {
     if ($("#suPass").value.length < 4) { toast("Password must be at least 4 characters"); return; }
 
     const user = {
+        no: nextUserNo(),
         name: $("#suName").value.trim(),
         phone: $("#suPhone").value.trim(),
         email: email,
@@ -1256,11 +1293,14 @@ function renderAdminOrders() {
 }
 
 function renderAdminCustomers() {
-    const userTable = users.length ? `
+    ensureUserNumbers();
+    const sortedUsers = users.slice().sort((a, b) => (Number(a.no) || 0) - (Number(b.no) || 0));
+    const userTable = sortedUsers.length ? `
         <table class="admin-table">
-            <tr><th>Name</th><th>Email</th><th>Phone</th><th>Joined</th><th>Orders</th></tr>
-            ${users.map(u => `
+            <tr><th>S.No</th><th>Name</th><th>Email</th><th>Phone</th><th>Joined</th><th>Orders</th></tr>
+            ${sortedUsers.map(u => `
             <tr>
+                <td>${u.no || "-"}</td>
                 <td>${esc(u.name)}</td>
                 <td>${esc(u.email)}</td>
                 <td>${esc(u.phone || "-")}</td>
